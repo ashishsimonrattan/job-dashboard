@@ -1,0 +1,5 @@
+2026/11/24-10:32:35.441 4808 Creating DB C:\Users\asimonrattan\Desktop\Teams Away\job-dashboard\data\browser-profile\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/11/24-10:32:35.506 4808 Reusing MANIFEST C:\Users\asimonrattan\Desktop\Teams Away\job-dashboard\data\browser-profile\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/11/24-10:32:35.687 3c14 Level-0 table #5: started
+2026/11/24-10:32:35.695 3c14 Level-0 table #5: 683273 bytes OK
+2026/11/24-10:32:35.700 3c14 Delete type=0 #3

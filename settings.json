@@ -1,0 +1,25 @@
+{
+  "host": "127.0.0.1",
+  "port": 8765,
+  "poll_enabled": true,
+  "poll_seconds": 60,
+  "auto_submit": true,
+  "max_experience_years": 2,
+  "browser_channel": "msedge",
+  "tectonic": "C:\\Users\\asimonrattan\\.copilot\\session-state\\7c507d53-93a9-47bb-944c-baed3616668b\\files\\tectonic\\tectonic.exe",
+  "tracker_dir": "C:\\Users\\asimonrattan\\.copilot\\session-state\\7c507d53-93a9-47bb-944c-baed3616668b\\files\\applications",
+  "python_libs": "C:\\Users\\asimonrattan\\.copilot\\session-state\\7c507d53-93a9-47bb-944c-baed3616668b\\files\\pdf-reader",
+  "resume_output_dir": "C:\\Users\\asimonrattan\\Downloads",
+  "sources": {
+    "google": true,
+    "microsoft": true,
+    "amazon": true,
+    "greenhouse": [
+      "stripe", "databricks", "rubrik", "groww", "mongodb", "twilio", "gitlab", "airbnb",
+      "okta", "samsara", "druva", "elastic", "datadog", "coinbase", "zscaler",
+      "razorpaysoftwareprivatelimited", "hackerrank", "inmobi"
+    ],
+    "lever": ["cred", "meesho", "zeta", "paytm", "spotify", "fampay"],
+    "ashby": ["notion", "openai", "sarvam", "atlan", "clickhouse", "snowflake"]
+  }
+}

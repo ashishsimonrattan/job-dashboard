@@ -1,0 +1,141 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\baselinestretch}{1.05}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\ifdefined\pdfglyphtounicode
+  \input{glyphtounicode}
+\fi
+\definecolor{black}{RGB}{0,0,0}
+\color{black}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.25in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.0in}
+\newlength{\resumeWidth}
+\setlength{\resumeWidth}{\dimexpr\textwidth+0.1in\relax}
+\urlstyle{same}
+\titleformat{\section}
+  {\vspace{-4pt}\bfseries\large\raggedright}
+  {}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-1pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{\resumeWidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small#4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[3]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{\resumeWidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} $|$ \small #2 & \textit{\small#3} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectItem}[1]{\item\small{#1\vspace{-3pt}}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=-0.1in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\providecommand{\resumeProfile}{
+  \textbf{Software Development Engineer} with full-stack experience in Golang, Python, Java, C++, React, and Next.js.
+  Migrated 15 legacy services to microservices, reduced API latency by 97\%, and cut manual monitoring by 80\%.
+  Experienced in REST APIs, event-driven systems, financial-incident detection, and end-to-end production delivery.
+}
+\providecommand{\resumeFrameworks}{React.js, Spring Boot, GORM, GTest}
+\providecommand{\resumeLanguages}{Golang, Python, Java, C++, C}
+\providecommand{\resumeCloudTools}{Git, CI/CD, Docker, Kubernetes, AWS, Azure, Splunk, Grafana}
+\begin{document}
+\begin{center}
+  {\Huge\bfseries Ashish Simon Rattan}\\\vspace{2pt}
+  \small Bengaluru, India $|$ +91-7986136389 $|$
+  \href{mailto:ashishsimonrattan@gmail.com}{ashishsimonrattan@gmail.com} $|$
+  \href{https://www.linkedin.com/in/ashish-simon-rattan}{linkedin} $|$
+  \href{https://codeforces.com/profile/pirobie_ultraa}{Codeforces Expert - (\textbf{1872} rating)}
+\end{center}
+\vspace{-19pt}
+\section{Profile}
+\resumeProfile
+\vspace{-10pt}
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0in,label={}]
+\small{\item{
+  \textbf{Languages}: \resumeLanguages \\
+  \textbf{Frameworks}: \resumeFrameworks \\
+  \textbf{Databases}: PostgreSQL, Couchbase, Oracle \\
+  \textbf{Systems}: REST APIs, Microservices, Distributed Systems, Kafka, gRPC, Protocol Buffers, Linux \\
+  \textbf{Cloud/Tools}: \resumeCloudTools \\
+  \textbf{Trainings \& Certifications}:
+  \href{https://learn.microsoft.com/en-in/users/ashishsimonrattan-5889/achievements/nq57gdlf}{Develop AI Agents on Azure} (Microsoft),
+  \href{https://learn.microsoft.com/en-in/users/ashishsimonrattan-5889/achievements/zj3p9452}{AI Concepts for Developers and Technology Professionals} (Microsoft),
+  \href{https://certificate.codingninjas.com/view/0ef77459f36c3248}{Excellence in DSA} (Coding Ninjas),
+  \href{https://www.credly.com/go/eWHG48c5}{AWS Cloud Foundations}
+}}
+\end{itemize}
+\vspace{-14pt}
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{Amadeus Software Labs}{\textbf{Bengaluru, India}}
+  {Software Development Engineer I}{July 2025 -- Present}
+\resumeItemListStart
+\resumeItem{\textbf{Migrated 15 legacy C++ services to Golang microservices}, enabling independent deployments and simpler service ownership.}
+\resumeItem{\textbf{Built Kafka event pipelines} for asynchronous processing, cross-service synchronization, and AI-assisted incident workflows.}
+\resumeItem{\textbf{Automated financial-incident detection with Python}, identifying production data desyncs and reducing revenue risk.}
+\resumeItem{\textbf{Deployed Go microservices with Docker and Kubernetes}, improving deployment consistency and production troubleshooting.}
+\resumeItem{\textbf{Reduced manual monitoring by 80\%} with Splunk observability across \textbf{100+ SLA-based production alerts}.}
+\resumeItem{\textbf{Built a decryption framework} using enterprise cryptographic libraries, accelerating production incident investigation.}
+\resumeItemListEnd
+\resumeSubheading{Amadeus Software Labs}{\textbf{Bengaluru, India}}
+  {Software Development Engineer Intern}{Jan 2025 -- June 2025}
+\resumeItemListStart
+\resumeItem{\textbf{Built 10+ REST APIs and React-based Admin UI pages} for configuration management, achieving a sub-300ms latency SLO for enterprise customers including \textbf{Accor}.}
+\resumeItem{\textbf{Cut API latency from $\sim$5s to $\sim$150ms} by optimizing Protocol Buffer retrieval and serialization overhead.}
+\resumeItem{\textbf{Built a UHA-compliant C++ service layer on Azure} routing reads from Oracle to distributed Couchbase storage.}
+\resumeItem{\textbf{Designed highly available read paths} across distributed synchronization pipelines with consistency guarantees.}
+\resumeItem{\textbf{Built GTest validation suites} to improve service reliability and production readiness.}
+\resumeItemListEnd
+\resumeSubheading{Legal Trust Network}{\textbf{Gurugram, India (Remote)}}
+  {Software Development Engineer Intern}{May 2023 -- July 2023}
+\resumeItemListStart
+\resumeItem{\textbf{Cut retrieval latency by 60\%+} through optimized REST APIs and webhook integration.}
+\resumeItem{\textbf{Built Golang backend modules} using Protocol Buffers and gRPC for efficient inter-service communication.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading{SoulScape}
+  {Spring Boot, PostgreSQL, Next.js, WebSockets, Python (BeautifulSoup) \,|\, \href{https://www.soulscapeindia.com}{\underline{Live}}}
+  {March 2026 -- Present}
+\resumeItemListStart
+\resumeProjectItem{\textbf{Architected and built a full-stack social travel platform}, owning backend design and end-to-end delivery.}
+\resumeProjectItem{\textbf{Designed 30+ domain services and $\sim$200 REST APIs} for discovery, bookings, itineraries, and partner operations.}
+\resumeProjectItem{\textbf{Implemented JWT/OTP authentication and WebSocket chat} for secure access and real-time communication.}
+\resumeProjectItem{\textbf{Containerized application services using Docker}, simplifying environment setup and deployment consistency.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-2pt}
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading{Birla Institute of Technology and Science, Pilani}{\textbf{2026 -- 2028 (Expected)}}
+  {M.Tech in Artificial Intelligence}{Work Integrated Learning Programme}
+\vspace{9pt}
+\resumeSubheading{Thapar Institute of Engineering and Technology, Patiala}{\textbf{2021 -- 2025}}
+  {B.E. in Computer Science and Engineering}{CGPA: \textbf{8.23}}
+\resumeSubHeadingListEnd
+\end{document}

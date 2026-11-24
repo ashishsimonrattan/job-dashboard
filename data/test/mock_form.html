@@ -1,0 +1,34 @@
+<!doctype html>
+<html><body>
+<h1>Software Engineer, New Grad — Mock Co</h1>
+<form id="f" onsubmit="event.preventDefault(); done()">
+  <label for="first_name">First Name *</label><input id="first_name" name="first_name" required><br>
+  <label for="last_name">Last Name *</label><input id="last_name" name="last_name" required><br>
+  <label for="email">Email *</label><input id="email" type="email" name="email" required><br>
+  <label for="phone">Phone *</label><input id="phone" name="phone" required><br>
+  <label for="resume">Resume/CV *</label><input id="resume" type="file" name="resume" required><br>
+  <label for="li">LinkedIn Profile</label><input id="li" name="li"><br>
+  <label for="loc">Current location *</label><input id="loc" name="loc" required><br>
+  <fieldset><legend>Are you legally authorized to work in India? *</legend>
+    <label><input type="radio" name="auth" value="1" required>Yes</label>
+    <label><input type="radio" name="auth" value="0">No</label></fieldset>
+  <label for="gender">Gender</label>
+  <select id="gender" name="gender"><option></option><option>Male</option><option>Female</option><option>Decline to self-identify</option></select><br>
+  <div class="application-question"><div class="application-label">Total work experience ✱</div>
+    <ul><li><label><input type="radio" name="exp" value="lt2" required><span>Less than 2 yrs</span></label></li>
+        <li><label><input type="radio" name="exp" value="3-4"><span>3yrs - 4yrs</span></label></li></ul></div>
+  <label><input type="checkbox" name="privacy" required> I have read and acknowledge the Privacy Notice *</label><br>
+  <div id="extra"></div>
+  <button type="submit">Submit application</button>
+</form>
+<script>
+  if (location.hash === '#hard') document.getElementById('extra').innerHTML =
+    '<label for="why">Why do you want to work at Mock Co? *</label><textarea id="why" name="why" required></textarea>';
+  function done() {
+    const f = document.getElementById('f');
+    window.submitted = Object.fromEntries(new FormData(f).entries());
+    document.body.innerHTML = '<h2>Thank you for applying! Your application has been received.</h2><pre id="data"></pre>';
+    document.getElementById('data').textContent = JSON.stringify(window.submitted, (k, v) => v instanceof File ? v.name : v);
+  }
+</script>
+</body></html>

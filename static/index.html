@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Radar — Ashish</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">◎</span>
+    <div>
+      <h1>Job Radar</h1>
+      <p class="sub">India · SDE-1 / new-grad / 0–2 yrs · Google, Microsoft, Amazon + 30 company boards</p>
+    </div>
+  </div>
+  <div class="controls">
+    <button id="refreshBtn" class="btn primary" title="Scan every career site now">
+      <span class="spin" hidden></span><span class="label">↻ Refresh now</span>
+    </button>
+    <label class="toggle" title="Scan automatically in the background">
+      <input type="checkbox" id="pollToggle"> Auto-scan every
+      <select id="pollInterval">
+        <option value="30">30 s</option><option value="60">1 min</option>
+        <option value="120">2 min</option><option value="300">5 min</option>
+      </select>
+    </label>
+    <label class="toggle" title="When off, forms are pre-filled and you press Submit yourself">
+      <input type="checkbox" id="autoSubmit"> Auto-submit after Apply
+    </label>
+    <button id="notifyBtn" class="btn ghost" title="Desktop alerts for new openings">🔔 Alerts</button>
+  </div>
+</header>
+
+<section class="statusline">
+  <span id="scanState">Loading…</span>
+  <span id="queueState"></span>
+</section>
+
+<section class="legend" id="legend"></section>
+
+<section class="toolbar">
+  <input id="search" type="search" placeholder="Search company, title, location…">
+  <select id="sourceFilter"><option value="">All sources</option></select>
+  <select id="fitFilter">
+    <option value="">Any fit</option>
+    <option value="entry">Entry / new grad</option>
+    <option value="match">≤ 2 yrs stated</option>
+    <option value="unknown">Experience not stated</option>
+    <option value="stretch">Stretch (level II)</option>
+    <option value="tracked">From tracker</option>
+  </select>
+  <label class="toggle"><input type="checkbox" id="hideDone" checked> Hide submitted / skipped</label>
+  <span class="spacer"></span>
+  <button id="selectNew" class="btn ghost">Select all new</button>
+  <button id="applySelected" class="btn apply" disabled>Apply to selected (0)</button>
+</section>
+
+<main class="layout">
+  <section class="tablewrap">
+    <table id="jobs">
+      <thead>
+      <tr>
+        <th><input type="checkbox" id="selectAll" title="Select all visible"></th>
+        <th data-sort="status">Status</th>
+        <th data-sort="company">Company</th>
+        <th data-sort="title">Role</th>
+        <th data-sort="location">Location</th>
+        <th data-sort="fit">Fit</th>
+        <th data-sort="first_seen">Seen</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p id="empty" class="empty" hidden>No openings match the filters.</p>
+  </section>
+
+  <aside class="side">
+    <div class="card">
+      <h3>Activity</h3>
+      <ul id="activity" class="activity"></ul>
+    </div>
+    <div class="card">
+      <h3>Sources (last scan)</h3>
+      <ul id="sources" class="sources"></ul>
+    </div>
+  </aside>
+</main>
+
+<div id="drawer" class="drawer" hidden>
+  <div class="drawer-inner">
+    <button class="close" id="drawerClose">✕</button>
+    <div id="drawerBody"></div>
+  </div>
+</div>
+
+<dialog id="confirmDialog">
+  <form method="dialog">
+    <h3>Apply to these jobs?</h3>
+    <p class="muted">For each job I will build a tailored one-page résumé, fill the form in the automation browser
+      (including each portal’s required privacy-notice acknowledgement) and — if auto-submit is on and every required
+      field is answered — submit it. CAPTCHAs, sign-ins and
+      unanswered questions are never bypassed: those turn <b class="amber">amber</b>/<b class="red">red</b> and the
+      pre-filled tab is left open for you.</p>
+    <ul id="confirmList"></ul>
+    <menu>
+      <button value="cancel" class="btn ghost">Cancel</button>
+      <button value="ok" class="btn apply" id="confirmOk">Yes, apply</button>
+    </menu>
+  </form>
+</dialog>
+
+<dialog id="markDialog">
+  <form method="dialog">
+    <h3>Mark as submitted</h3>
+    <p class="muted">Paste the portal’s confirmation message or the confirmation email subject.</p>
+    <textarea id="markText" rows="3" placeholder="e.g. Thank you for applying to …"></textarea>
+    <menu>
+      <button value="cancel" class="btn ghost">Cancel</button>
+      <button value="ok" class="btn apply">Save</button>
+    </menu>
+  </form>
+</dialog>
+
+<div id="toasts" class="toasts"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
